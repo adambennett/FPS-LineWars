@@ -1,0 +1,21 @@
+//Jimmy Vegas Unity 5 Tutorial
+//This script will move your game from the splash screen to the main menu
+
+
+using UnityEngine.SceneManagement;
+
+public class SplashToMenu : MonoBehaviour {
+
+
+	void Start () {
+		StartCoroutine (SplashFinish ());
+	}
+
+	IEnumerator SplashFinish () {
+		yield return new WaitForSeconds (5.5f);
+		SceneManager.LoadScene (4);
+
+	}
+
+
+}

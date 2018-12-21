@@ -1,0 +1,40 @@
+//Jimmy Vegas Unity 5 Tutorial
+//These scripts will allow your menu to work and return from credits
+
+
+//mainmenu
+
+using UnityEngine.SceneManagement;
+
+public class MainMenuOptions : MonoBehaviour {
+
+	public void PlayGame () {
+		SceneManager.LoadScene (0);
+	}
+
+	public void CreditScene () {
+		SceneManager.LoadScene (2);
+	}
+
+
+}
+
+
+
+// credit to menu
+
+using UnityEngine.SceneManagement;
+
+public class CredToMenuC : MonoBehaviour {
+
+
+	void Start () {
+		StartCoroutine (ReturnToMenu ());
+	}
+
+	IEnumerator ReturnToMenu() {
+		yield return new WaitForSeconds (11);
+		SceneManager.LoadScene (3);
+	}
+
+}

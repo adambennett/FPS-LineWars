@@ -1,0 +1,35 @@
+//Jimmy Vegas Unity Tutorial
+//These are the changes you will need to make to your scripts
+
+//GLOBAL AMMO CHANGES:
+
+static var LoadedAmmo : int;
+var InternalLoaded : int;
+var LoadedDisplay : GameObject;
+
+InternalLoaded = LoadedAmmo;
+
+LoadedDisplay.GetComponent.<Text>().text = "" + InternalLoaded;
+
+
+
+
+
+//AMMO PICKUP SCRIPT CHANGE:
+
+var AmmoSound : AudioSource;
+
+function OnTriggerEnter (col : Collider) {
+AmmoSound.Play();
+		if (GlobalAmmo.LoadedAmmo == 0) {
+			GlobalAmmo.LoadedAmmo += 10;
+			this.gameObject.SetActive(false);
+		}
+		else {
+			GlobalAmmo.CurrentAmmo += 10;
+			this.gameObject.SetActive(false);
+		}
+}
+
+
+

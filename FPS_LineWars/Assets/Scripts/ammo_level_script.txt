@@ -1,0 +1,23 @@
+//Jimmy Vegas Unity Tutorial
+//These scripts will keep count and increase your ammo level on-screen
+
+//GLOBALAMMO SCRIPT:
+
+import UnityEngine.UI;
+
+static var CurrentAmmo : int;
+var InternalAmmo : int;
+var AmmoDisplay : GameObject;
+
+function Update () {
+	InternalAmmo = CurrentAmmo;
+	AmmoDisplay.GetComponent.<Text>().text = "" + InternalAmmo;
+}
+
+
+//PICKUP AMMO SCRIPT:
+
+function OnTriggerEnter (col : Collider) {
+	GlobalAmmo.CurrentAmmo += 10;
+	this.gameObject.SetActive(false);
+}
